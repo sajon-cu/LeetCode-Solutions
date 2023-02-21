@@ -11,11 +11,10 @@ class Solution {
             if(nums[i] == nums[i+1]) {
                 i += 2
             } else {
-                res = nums[i]
-                break
+                return nums[i]
             }
         }
         
-        return if(res==0) nums[i] else res    
+        return nums[i]
     }
 }
