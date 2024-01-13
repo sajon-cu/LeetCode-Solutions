@@ -1,5 +1,5 @@
 class Solution {
-    public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
+    /*public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
         int sum = 0;
 
         for(int i = 0; i < nums.size(); i++) {
@@ -41,5 +41,27 @@ class Solution {
         System.out.print(sb +" ");
 
         return sb.toString();
+    }*/
+    
+    public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
+        int sum = 0;
+
+        for(int i = 0; i < nums.size(); i++) {
+            if(k == decimalToBinary(i)) {
+                sum += nums.get(i);
+            }
+        }
+
+        return sum;
+    }
+    
+    public int decimalToBinary(int num) {
+        int count = 0;
+
+        while(num != 0) {
+            if(num % 2 == 1) count++;
+            num /= 2;
+        }
+        return count;
     }
 }
